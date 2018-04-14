@@ -6,7 +6,11 @@
   "dependencies": {
     "firebase-tools": "^3.18.4",
     "gulp": "^3.9.1",
-    "gulp-plumber": "^1.2.0"
+    "gulp-markdown": "^2.0.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "nunjucks": "^3.1.2",
+    "through2": "^2.0.3"
   },
   "devDependencies": {},
   "scripts": {
