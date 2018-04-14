@@ -1,0 +1,25 @@
+{
+  "name": "n64-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-tools": "^3.18.4",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pizzapanther/n64-utils.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pizzapanther/n64-utils/issues"
+  },
+  "homepage": "https://github.com/pizzapanther/n64-utils#readme"
+}
