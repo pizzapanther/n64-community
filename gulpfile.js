@@ -27,6 +27,12 @@ function render () {
   });
 }
 
+gulp.task('copy-files', function () {
+  return gulp.src(["files/**/*"])
+    .pipe(plumber())
+    .pipe(gulp.dest("public"));
+});
+
 gulp.task('copy-html', function () {
   return gulp.src(["**/*.html", "!public/**/*", "!node_modules/**/*"])
     .pipe(plumber())
@@ -42,7 +48,7 @@ gulp.task('build-markdown', function () {
     .pipe(gulp.dest("public"));
 });
 
-var build_tasks = ['copy-html', 'build-markdown'];
+var build_tasks = ['copy-html', 'build-markdown', 'copy-files'];
 
 gulp.task('default', build_tasks);
 
