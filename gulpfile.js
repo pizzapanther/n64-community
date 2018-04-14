@@ -53,5 +53,5 @@ var build_tasks = ['copy-html', 'build-markdown', 'copy-files'];
 gulp.task('default', build_tasks);
 
 gulp.task('watch', build_tasks, function () {
-  gulp.watch(["**/*.html", "**/*.md", "!public/**/*", "!node_modules/**/*"], build_tasks);
+  gulp.watch(["**/*.html", "**/*.md", "files/**/*", "!public/**/*", "!node_modules/**/*"], build_tasks);
 });
