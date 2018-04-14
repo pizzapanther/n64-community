@@ -9,5 +9,7 @@ Run one of these:
 ```
 curl -o- https://community.neutron64.com/scripts/install-nbeam.py | python
 
+# or #
+
 wget -qO- https://community.neutron64.com/scripts/install-nbeam.py | python
 ```
