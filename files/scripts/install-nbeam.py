@@ -6,6 +6,7 @@ import sys
 
 OSes = {
   'amazon': {
+    'sudo': True,
     'cmds': [
       'yum -y groupinstall development',
       'yum -y install {pkgs}',
@@ -18,6 +19,7 @@ OSes = {
     ],
   },
   'deb': {
+    'sudo': True,
     'cmds': [
       'apt update',
       'apt install -y {pkgs}',
@@ -34,6 +36,7 @@ OSes = {
     ]
   },
   'centos': {
+    'sudo': True,
     'cmds': [
       'yum -y install https://centos7.iuscommunity.org/ius-release.rpm',
       'yum -y groupinstall development',
@@ -47,6 +50,7 @@ OSes = {
     ],
   },
   'termux': {
+    'sudo': False,
     'cmds': [
       'pip3 install neutron-beam',
     ],
@@ -54,8 +58,13 @@ OSes = {
   }
 }
 
-def run_cmd (cmd, context):
-  ret = subprocess.call(cmd.format(**context), shell=True)
+def run_cmd (cmd, context, sudo=True):
+  run_cmd = cmd.format(**context)
+  if sudo:
+    run_cmd = 'sudo -H ' + run_cmd
+
+  print('Command:', run_cmd)
+  ret = subprocess.call(run_cmd, shell=True)
   if ret:
     print('!!! Error in installation !!!')
     sys.exit(ret)
@@ -64,7 +73,7 @@ def install(os):
   pkgs = ' '.join(OSes[os]['pkgs'])
   context = {'pkgs': pkgs}
   for cmd in OSes[os]['cmds']:
-    run_cmd(cmd, context)
+    run_cmd(cmd, context, OSes[os]['sudo'])
 
 def run ():
   os = 'unknown'
