@@ -33,6 +33,12 @@ OSes = {
       'python36u',
       'python36u-pip',
     ],
+  },
+  'termux': {
+    'cmds': [
+      'pip3 install neutron-beam',
+    ],
+    'pkgs': [],
   }
 }
 
@@ -57,6 +63,16 @@ def run ():
     os = 'deb'
   elif 'centos' in linux.lower():
     os = 'centos'
+
+  if os == 'unknown':
+    try:
+      subprocess.call('termux-info')
+
+    except FileNotFoundError:
+      pass
+
+    else:
+      os = 'termux'
 
   if os == 'unknown':
     print('Unkwown OS, try manual installation')
