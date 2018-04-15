@@ -5,6 +5,18 @@ import subprocess
 import sys
 
 OSes = {
+  'amazon': {
+    'cmds': [
+      'yum -y groupinstall development',
+      'yum -y install {pkgs}',
+      'pip-3.6 install neutron-beam',
+    ],
+    'pkgs': [
+      'yum-utils',
+      'python36',
+      'python36-pip',
+    ],
+  },
   'deb': {
     'cmds': [
       'apt update',
@@ -65,10 +77,14 @@ def run ():
     os = 'centos'
 
   if os == 'unknown':
+    pform = platform.platform()
+    if 'amzn' in pform:
+      os = 'amazon'
+
     try:
       subprocess.call('termux-info')
 
-    except FileNotFoundError:
+    except:
       pass
 
     else:
