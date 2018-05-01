@@ -55,6 +55,7 @@ OSes = {
       'pip3 install neutron-beam',
     ],
     'pkgs': [
+      'python',
       'clang',
       'python-dev',
       'libcrypt-dev'
