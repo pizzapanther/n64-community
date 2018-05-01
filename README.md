@@ -2,7 +2,7 @@
 
 ## Neutron Beam Quick Installation Script:
 
-[install-nbeam.py](https://github.com/pizzapanther/n64-community/blob/master/scripts/install-nbeam.py)
+[install-nbeam.py](https://github.com/pizzapanther/n64-community/blob/master/files/scripts/install-nbeam.py)
 
 Run one of these:
 
