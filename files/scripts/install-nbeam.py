@@ -52,7 +52,7 @@ OSes = {
   'termux': {
     'sudo': False,
     'cmds': [
-      'pkg install {pkgs}',
+      'pkg install -y {pkgs}',
       'pip3 install neutron-beam',
     ],
     'pkgs': [
