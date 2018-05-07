@@ -112,7 +112,7 @@ def run ():
   install(os)
 
   print("--- Installation Complete ---")
-  print("Run: nbeam setup_local or nbeam setup_remote to continue")
+  print("Run: nbeam setup_local, nbeam setup_remote, or nbeam setup_termux to continue")
 
 if __name__ == '__main__':
   run()
